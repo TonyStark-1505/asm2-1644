@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 const LegoModel = require('../models/LegoModel');
+const CategoryModel = require('../models/CategoryModel');
 // const ToyModel = require('../models/ToyModel');
 // router.get('/', (req, res) => {
 //    res.render('lego');
@@ -39,7 +40,9 @@ router.get('/add', (req, res) => {
 
 router.post('/add', async (req, res) => {
    var lego = req.body;
+   var category = req.body;
    await LegoModel.create(lego);
+   await CategoryModel.create(category);
    console.log('Add toy succeed !');
    res.redirect('/lego');
 })

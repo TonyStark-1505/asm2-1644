@@ -19,6 +19,9 @@ var LegoSchema = mongoose.Schema(
       description:{
          type:String,
       },
+      category:{
+         type:String,
+      }
 
    }
 );
